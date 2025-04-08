@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import stickerImage from '../../assets/shooting-star.png';
+import stickerImage from '../../assets/youre-a-star.png';
 import './MagicCanvas.css';
 
 const MagicCanvas = () => {
