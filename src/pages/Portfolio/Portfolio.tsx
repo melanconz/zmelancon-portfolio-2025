@@ -9,22 +9,10 @@ import {
 
 const projects = [
   {
-    title: 'AI Code Reviewer',
+    title: 'My Old Space',
     description:
-      'Analyzes and suggests improvements for JavaScript/TypeScript code.',
-    link: '#',
-  },
-  {
-    title: 'AI Resume Analyzer',
-    description:
-      'Provides AI-driven feedback on resumes based on job descriptions.',
-    link: '#',
-  },
-  {
-    title: 'AI UI/UX Checker',
-    description:
-      'Scans websites for accessibility issues and suggests improvements.',
-    link: '#',
+      'A nostalgic web app that mimics the old MySpace experience, and gives some insight into my skills as a developer.',
+    link: '/myoldspace',
   },
 ];
 
@@ -50,11 +38,7 @@ export default function Portfolio() {
                 <Typography variant="body2" sx={{ my: 1 }}>
                   {project.description}
                 </Typography>
-                <Button
-                  variant="contained"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer">
+                <Button variant="contained" href={project.link}>
                   View
                 </Button>
               </CardContent>

@@ -1,0 +1,33 @@
+.theme-classic body {
+    background-image: url('/old-school-bg.gif');
+    /* get a tiled gif for nostalgia */
+    background-color: #000;
+    color: lime;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.theme-classic .myspace-container {
+    background-color: #ffccff;
+    border: 5px dotted hotpink;
+    box-shadow: none;
+}
+
+.theme-classic h1,
+.theme-classic h2 {
+    color: #ff0000;
+    text-shadow: 2px 2px #000;
+}
+
+.theme-classic .friend-card img {
+    border: 3px dashed #ff00ff;
+}
+
+.theme-classic .theme-switcher button {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border: 2px solid red;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
