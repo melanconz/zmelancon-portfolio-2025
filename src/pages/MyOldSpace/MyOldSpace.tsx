@@ -7,13 +7,13 @@ import TopFriends from './components/TopFriends';
 import { mockFriends } from './appdata/MockFriends';
 import Playlist from './components/Playlist';
 import { Link } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import GlitterDivider from './components/GlitterDivider';
+import Blog from './components/Blog';
 
 function MyOldSpace() {
   return (
-    <ThemeProvider>
+    <>
       <div className="myspace-back">
         <Link to="/">Back to Homepage</Link>
         <ThemeSwitcher />
@@ -23,6 +23,7 @@ function MyOldSpace() {
         <div className="profile-content">
           <div className="left-column">
             <AboutMe bio="Hey, I'm Zachary — a front-end wizard with a soft spot for glittery MySpace vibes and pixel-perfect UI. I turn coffee into code, wrangle React like it's second nature, and believe websites should feel as good as they look. 💻✨☕" />
+            <Blog />
             <GlitterDivider />
           </div>
           <div className="right-column">
@@ -31,7 +32,7 @@ function MyOldSpace() {
           </div>
         </div>
       </div>
-    </ThemeProvider>
+    </>
   );
 }
 

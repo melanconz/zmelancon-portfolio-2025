@@ -14,6 +14,11 @@ const projects = [
       'A nostalgic web app that mimics the old MySpace experience, and gives some insight into my skills as a developer.',
     link: '/myoldspace',
   },
+  {
+    title: 'Magic Canvas',
+    description: 'Place stickers on a canvas.',
+    link: '/magic',
+  },
 ];
 
 export default function Portfolio() {
@@ -32,10 +37,12 @@ export default function Portfolio() {
       <Grid container spacing={3} justifyContent="center">
         {projects.map((project, index) => (
           <Grid key={index}>
-            <Card sx={{ p: 2, textAlign: 'left' }}>
+            <Card sx={{ width: '500px', p: 2, textAlign: 'left' }}>
               <CardContent>
                 <Typography variant="h6">{project.title}</Typography>
-                <Typography variant="body2" sx={{ my: 1 }}>
+                <Typography
+                  variant="body2"
+                  sx={{ my: 1, wordWrap: 'break-word' }}>
                   {project.description}
                 </Typography>
                 <Button variant="contained" href={project.link}>

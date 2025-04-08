@@ -158,8 +158,80 @@ a:hover {
 }
 
 .modern-sticker {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.myspace-blog {
+    background-color: #fff8f0;
+    border: 2px dashed #ff9966;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.myspace-blog h2 {
+    color: #cc6600;
+    margin-bottom: 12px;
+}
+
+.myspace-blog ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.myspace-blog li {
+    margin-bottom: 10px;
+}
+
+.myspace-blog a {
+    color: #cc3300;
+    font-weight: bold;
+}
+
+.blog-post {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post.modern {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post.modern h2 {
+    font-size: 1.75rem;
+    color: #0077cc;
+}
+
+.blog-post.modern strong {
+    color: #0077cc;
+}
+
+.blog-post.classic {
+    background-color: #fff0f8;
+    border: 2px dashed #ff69b4;
+    color: #660066;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.blog-post.classic h2 {
+    font-size: 1.5rem;
+    color: #ff00cc;
+    text-decoration: underline wavy;
+}
+
+.blog-post.classic strong {
+    background: linear-gradient(to right, #ff00cc, #660066);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
 }

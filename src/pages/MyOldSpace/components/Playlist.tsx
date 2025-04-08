@@ -31,7 +31,7 @@ export default function Playlist() {
           </h3>
           <iframe
             width="100%"
-            height="200"
+            height="300"
             src={`https://www.youtube.com/embed/${youtubeId}?${
               autoplay ? 'autoplay=1&mute=1' : ''
             }`}
