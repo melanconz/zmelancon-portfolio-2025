@@ -84,6 +84,13 @@ export default function Portfolio() {
         rel="noopener noreferrer">
         LinkedIn
       </Button>
+      <Button
+        variant="outlined"
+        href="src/assets/ZacharyMelanconResumeApril2025.pdf"
+        sx={{ ml: 2 }}
+        download>
+        Download Resume
+      </Button>
     </Container>
   );
 }
