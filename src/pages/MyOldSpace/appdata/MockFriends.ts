@@ -4,7 +4,7 @@ import HTML5 from '../assets/HTML5.svg';
 import JavaScript from '../assets/JavaScript.svg';
 import ReactIcon from '../assets/React.svg';
 import TypeScript from '../assets/TypeScript.svg';
-import NodeJS from '../assets/NodeJS.svg';
+import Nodejs from '../assets/Nodejs.svg';
 import MaterialUI from '../assets/MaterialUI.svg';
 import Jest from '../assets/Jest.svg';
 
@@ -21,7 +21,7 @@ export const mockFriends: Friend[] = [
   },
   {
     name: 'Node.js',
-    image: NodeJS,
+    image: Nodejs,
     profileLink: 'https://nodejs.org/',
   },
   {
