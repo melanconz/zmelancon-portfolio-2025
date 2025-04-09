@@ -7,7 +7,7 @@ import BillGOExperience from './pages/MyOldSpace/Blogs/BillGOExperience/BillGOEx
 import SailPointDesign from './pages/MyOldSpace/Blogs/SailPointDesign/SailPointDesign';
 import { ThemeProvider } from './pages/MyOldSpace/context/ThemeContext';
 import MagicCanvas from './pages/MagicCanvas/MagicCanvas';
-import WeatherDashboard from './WeatherDashboard/WeatherDashboard';
+import WeatherDashboard from './pages/WeatherDashboard/WeatherDashboard';
 
 function App() {
   return (
