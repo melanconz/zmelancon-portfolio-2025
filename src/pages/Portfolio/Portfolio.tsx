@@ -6,6 +6,7 @@ import {
   CardContent,
   Button,
 } from '@mui/material';
+import React from 'react';
 
 const projects = [
   {
@@ -16,8 +17,15 @@ const projects = [
   },
   {
     title: 'Magic Canvas',
-    description: 'Place stickers on a canvas.',
+    description:
+      'An interactive web app where users can place and arrange virtual stickers on a customizable canvas, showcasing my skills in UI design and JavaScript functionality.',
     link: '/magic',
+  },
+  {
+    title: 'Weather Dashboard',
+    description:
+      'A simple weather dashboard that allows users to search for real-time weather data for any city, showcasing my skills in working with APIs, asynchronous data fetching, and dynamic UI rendering.',
+    link: '/weather-dashboard',
   },
 ];
 
@@ -28,7 +36,11 @@ export default function Portfolio() {
         Zachary Melancon
       </Typography>
       <Typography variant="h5" sx={{ mb: 4 }}>
-        Building AI-Powered Web Experiences
+        Welcome to my portfolio! This app showcases my skills and projects as a
+        Senior Software Engineer, highlighting my expertise in full-stack
+        development, UI/UX design, and technical problem solving. Explore my
+        projects and feel free to connect with me for collaboration or
+        inquiries.
       </Typography>
 
       <Typography variant="h4" sx={{ mt: 5, mb: 3 }}>
@@ -71,6 +83,13 @@ export default function Portfolio() {
         target="_blank"
         rel="noopener noreferrer">
         LinkedIn
+      </Button>
+      <Button
+        variant="outlined"
+        href="src/assets/ZacharyMelanconResumeApril2025.pdf"
+        sx={{ ml: 2 }}
+        download>
+        Download Resume
       </Button>
     </Container>
   );

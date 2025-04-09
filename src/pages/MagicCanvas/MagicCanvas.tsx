@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import stickerImage from '../../assets/youre-a-star.png';
 import './MagicCanvas.css';
+import { Link } from 'react-router-dom';
 
 const MagicCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -42,18 +43,23 @@ const MagicCanvas = () => {
   }, []);
 
   return (
-    <div className="magic-wrapper">
-      <canvas ref={canvasRef} className="magic-canvas" />
-      {stickers.map((s, i) => (
-        <img
-          key={i}
-          src={stickerImage}
-          alt="sticker"
-          className="magic-sticker"
-          style={{ left: s.x - 20, top: s.y - 20 }}
-        />
-      ))}
-    </div>
+    <>
+      <div className="myspace-back">
+        <Link to="/">Back to Homepage</Link>
+      </div>
+      <div className="magic-wrapper">
+        <canvas ref={canvasRef} className="magic-canvas" />
+        {stickers.map((s, i) => (
+          <img
+            key={i}
+            src={stickerImage}
+            alt="sticker"
+            className="magic-sticker"
+            style={{ left: s.x - 20, top: s.y - 20 }}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
