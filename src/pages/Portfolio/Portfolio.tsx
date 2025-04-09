@@ -85,7 +85,7 @@ export default function Portfolio() {
       </Button>
       <Button
         variant="outlined"
-        href="src/assets/ZacharyMelanconResumeApril2025.pdf"
+        href="public/ZacharyMelanconResumeApril2025.pdf"
         sx={{ ml: 2 }}
         download>
         Download Resume
