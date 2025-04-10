@@ -1,0 +1,62 @@
+/* WeatherDashboard.module.css */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  min-height: 100vh;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #00796b;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-wrapper input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+}
+
+.input-wrapper button {
+  padding: 0.75rem 1.25rem;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-wrapper button:hover {
+  background-color: #004d40;
+}
