@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import { blue, grey } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
-import './WeatherDashboard.css';
 
 interface WeatherData {
   location: {
