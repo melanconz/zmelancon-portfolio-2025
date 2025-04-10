@@ -64,12 +64,22 @@ const WeatherDashboard: React.FC = () => {
   };
 
   return (
-    <>
-      {' '}
-      <div className="myspace-back">
-        <Link to="/">Back to Homepage</Link>
-      </div>
-      <Container maxWidth="sm" sx={{ textAlign: 'center', py: 5 }}>
+    <Box
+      sx={{
+        background: 'linear-gradient(to bottom, #e3f2fd, #ffffff)',
+        minHeight: '100vh',
+        py: 5,
+        px: 2,
+      }}>
+      <Box sx={{ textAlign: 'left', mb: 2 }}>
+        <Link
+          to="/"
+          style={{ textDecoration: 'none', color: blue[700], fontWeight: 600 }}>
+          ← Back to Homepage
+        </Link>
+      </Box>
+
+      <Container maxWidth="sm" sx={{ textAlign: 'center' }}>
         <Typography
           variant="h3"
           sx={{
@@ -77,42 +87,47 @@ const WeatherDashboard: React.FC = () => {
             fontWeight: 'bold',
             color: blue[700],
             textTransform: 'uppercase',
+            letterSpacing: 1,
           }}>
           Weather Dashboard
         </Typography>
 
-        <TextField
-          label="Enter City"
-          variant="outlined"
-          value={city}
-          onChange={handleCityChange}
-          fullWidth
+        <Box
           sx={{
-            mb: 2,
-            borderRadius: 2,
-            '& .MuiOutlinedInput-root': {
-              borderRadius: 2,
-              '& fieldset': {
-                borderColor: blue[500],
-              },
-              '&:hover fieldset': {
-                borderColor: blue[700],
-              },
-            },
-          }}
-        />
-        <Button
-          variant="contained"
-          onClick={fetchWeather}
-          sx={{
+            display: 'flex',
+            gap: 2,
             mb: 4,
-            bgcolor: blue[500],
-            '&:hover': {
-              bgcolor: blue[700],
-            },
+            flexWrap: 'wrap',
+            justifyContent: 'center',
           }}>
-          Get Weather
-        </Button>
+          <TextField
+            label="Enter City"
+            variant="outlined"
+            value={city}
+            onChange={handleCityChange}
+            sx={{
+              minWidth: 250,
+              borderRadius: 2,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 2,
+              },
+            }}
+          />
+          <Button
+            variant="contained"
+            onClick={fetchWeather}
+            sx={{
+              bgcolor: blue[500],
+              px: 3,
+              fontWeight: 'bold',
+              borderRadius: 2,
+              '&:hover': {
+                bgcolor: blue[700],
+              },
+            }}>
+            Get Weather
+          </Button>
+        </Box>
 
         {loading && <CircularProgress sx={{ color: blue[500] }} />}
         {error && (
@@ -122,51 +137,42 @@ const WeatherDashboard: React.FC = () => {
         )}
 
         {weatherData && !loading && (
-          <Box
+          <Card
             sx={{
-              mt: 3,
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column',
-              alignItems: 'center',
+              maxWidth: 400,
+              margin: '0 auto',
+              backgroundColor: grey[100],
+              borderRadius: 4,
+              boxShadow: 4,
+              padding: 3,
+              textAlign: 'center',
             }}>
-            <Card
-              sx={{
-                width: '100%',
-                maxWidth: 400,
-                backgroundColor: grey[100],
-                borderRadius: 3,
-                boxShadow: 3,
-                padding: 3,
-                textAlign: 'center',
-              }}>
-              <CardContent>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
-                  {weatherData.location.name}
-                </Typography>
-                <img
-                  src={`https://${weatherData.current.condition.icon}`}
-                  alt={weatherData.current.condition.text}
-                  style={{ width: 50, height: 50, marginBottom: 10 }}
-                />
-                <Typography variant="body1" sx={{ color: grey[700] }}>
-                  {weatherData.current.condition.text}
-                </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', mt: 2 }}>
-                  {weatherData.current.temp_c}°C
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 1 }}>
-                  Humidity: {weatherData.current.humidity}%
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 1 }}>
-                  Wind: {weatherData.current.wind_kph} km/h
-                </Typography>
-              </CardContent>
-            </Card>
-          </Box>
+            <CardContent>
+              <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
+                {weatherData.location.name}
+              </Typography>
+              <img
+                src={`https://${weatherData.current.condition.icon}`}
+                alt={weatherData.current.condition.text}
+                style={{ width: 60, height: 60, marginBottom: 8 }}
+              />
+              <Typography variant="body1" sx={{ color: grey[700], mb: 1 }}>
+                {weatherData.current.condition.text}
+              </Typography>
+              <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
+                {weatherData.current.temp_c}°C
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1 }}>
+                Humidity: {weatherData.current.humidity}%
+              </Typography>
+              <Typography variant="body2">
+                Wind: {weatherData.current.wind_kph} km/h
+              </Typography>
+            </CardContent>
+          </Card>
         )}
       </Container>
-    </>
+    </Box>
   );
 };
 
