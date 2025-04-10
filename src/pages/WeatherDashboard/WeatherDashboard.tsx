@@ -45,10 +45,9 @@ const WeatherDashboard: React.FC = () => {
     setWeatherData(null);
 
     try {
+      const apiUrl = import.meta.env.VITE_API_URL;
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${
-          import.meta.env.VITE_WEATHER_API_KEY
-        }&q=${city}`
+        `${apiUrl}/api/weather?city=${encodeURIComponent(city)}`
       );
       const data = await response.json();
 
