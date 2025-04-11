@@ -5,7 +5,9 @@ import {
   Card,
   CardContent,
   Button,
+  Box,
 } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -30,66 +32,129 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <Container maxWidth="lg" sx={{ textAlign: 'center', py: 5 }}>
-      <Typography variant="h2" sx={{ mb: 2 }}>
-        Zachary Melancon
-      </Typography>
-      <Typography variant="h5" sx={{ mb: 4 }}>
-        Welcome to my portfolio! This app showcases my skills and projects as a
-        Senior Software Engineer, highlighting my expertise in full-stack
-        development, UI/UX design, and technical problem solving. Explore my
-        projects and feel free to connect with me for collaboration or
-        inquiries.
-      </Typography>
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}>
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 'bold',
+            textAlign: 'center',
+            mb: 1,
+            color: 'primary.main',
+          }}>
+          Zachary Melancon
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{ textAlign: 'center', mb: 6, maxWidth: 800, mx: 'auto' }}>
+          Welcome to my portfolio! This app showcases my skills and projects as
+          a Senior Software Engineer, highlighting my expertise in full-stack
+          development, UI/UX design, and technical problem solving. Explore my
+          projects and feel free to connect with me for collaboration or
+          inquiries.
+        </Typography>
+      </motion.div>
 
-      <Typography variant="h4" sx={{ mt: 5, mb: 3 }}>
-        Projects
-      </Typography>
-      <Grid container spacing={3} justifyContent="center">
-        {projects.map((project, index) => (
-          <Grid key={index}>
-            <Card sx={{ width: '500px', p: 2, textAlign: 'left' }}>
-              <CardContent>
-                <Typography variant="h6">{project.title}</Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ my: 1, wordWrap: 'break-word' }}>
-                  {project.description}
-                </Typography>
-                <Button variant="contained" href={project.link}>
-                  View
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 'bold',
+            mb: 3,
+            textAlign: 'center',
+            color: 'text.primary',
+          }}>
+          Projects
+        </Typography>
 
-      <Typography variant="h4" sx={{ mt: 5, mb: 3 }}>
-        Connect
-      </Typography>
-      <Button
-        variant="outlined"
-        href="https://github.com/melanconz"
-        target="_blank"
-        rel="noopener noreferrer">
-        GitHub
-      </Button>
-      <Button
-        variant="outlined"
-        href="https://linkedin.com/in/zacharymelancon"
-        sx={{ ml: 2 }}
-        target="_blank"
-        rel="noopener noreferrer">
-        LinkedIn
-      </Button>
-      <Button
-        variant="outlined"
-        href="ZacharyMelanconResumeApril2025.pdf"
-        sx={{ ml: 2 }}
-        download>
-        Download Resume
-      </Button>
+        <Grid container spacing={4} justifyContent="center">
+          {projects.map((project, index) => (
+            <Grid key={index}>
+              <Card
+                component={motion.div}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                sx={{
+                  borderRadius: 4,
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minHeight: '100%', // or set a minHeight like 320
+                  boxShadow: 3,
+                  maxWidth: 300,
+                }}>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    {project.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: 'text.secondary', mb: 0 }}>
+                    {project.description}
+                  </Typography>
+                </CardContent>
+
+                <Box mt={2} display="flex" justifyContent="flex-start">
+                  <Button
+                    variant="contained"
+                    href={project.link}
+                    sx={{ borderRadius: 2 }}>
+                    View Project
+                  </Button>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}>
+        <Typography
+          variant="h4"
+          sx={{
+            mt: 8,
+            mb: 3,
+            textAlign: 'center',
+            fontWeight: 'bold',
+          }}>
+          Connect
+        </Typography>
+
+        <Box textAlign="center" display="flex" justifyContent="center" gap={2}>
+          <Button
+            variant="outlined"
+            href="https://github.com/melanconz"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ borderRadius: 2 }}>
+            GitHub
+          </Button>
+          <Button
+            variant="outlined"
+            href="https://linkedin.com/in/zacharymelancon"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ borderRadius: 2 }}>
+            LinkedIn
+          </Button>
+          <Button
+            variant="outlined"
+            href="ZacharyMelanconResumeApril2025.pdf"
+            download
+            sx={{ borderRadius: 2 }}>
+            Download Resume
+          </Button>
+        </Box>
+      </motion.div>
     </Container>
   );
 }

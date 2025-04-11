@@ -55,7 +55,7 @@ const MagicCanvas = () => {
             src={stickerImage}
             alt="sticker"
             className="magic-sticker"
-            style={{ left: s.x - 20, top: s.y - 20 }}
+            style={{ left: s.x - 30, top: s.y - 50 }}
           />
         ))}
       </div>
